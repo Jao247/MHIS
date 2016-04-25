@@ -16,7 +16,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="23.75">
 
         <ImageView
             android:id="@+id/imageView"
@@ -27,16 +28,6 @@
             android:contentDescription="@string/NavLogo"
             android:layout_weight="0.10"/>
 
-        <TextView
-            android:layout_width="120dp"
-            android:textSize="20dp"
-            android:typeface="sans"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="@string/NavTitle"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:layout_weight="0.4"
-            android:layout_gravity="center_vertical" />
     </LinearLayout>
 
 </LinearLayout>
