@@ -4,18 +4,22 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_sword"
+            android:onClick=""
             android:icon="@drawable/ic_menu_sword"
             android:title="Swords"/>
         <item
             android:id="@+id/nav_armour"
+            android:onClick=""
             android:icon="@drawable/ic_menu_armour"
             android:title="Armours"/>
         <item
             android:id="@+id/nav_twitter"
+            android:onClick=""
             android:icon="@drawable/ic_menu_twitter"
             android:title="Twitter"/>
         <item
             android:id="@+id/nav_exit"
+            android:onClick=""
             android:icon="@drawable/ic_menu_exit"
             android:title="Exit"/>
     </group>
