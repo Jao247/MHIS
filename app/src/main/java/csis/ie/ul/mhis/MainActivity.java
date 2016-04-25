@@ -88,20 +88,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if ( id == R.id.nav_sword )
+        if ( id == R.id.nav_sword)
         {
             // Handle the camera action
-        } else if ( id == R.id.nav_twitter )
+        } else if ( id == R.id.nav_armour )
         {
 
-        } else if ( id == R.id.nav_armour )
+        } else if ( id == R.id.nav_twitter )
         {
 
         } else if ( id == R.id.nav_exit )
         {
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
