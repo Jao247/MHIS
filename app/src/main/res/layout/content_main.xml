@@ -23,6 +23,12 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/back_mainb">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:background="@drawable/back_main">
 
@@ -35,6 +41,11 @@
             android:textSize="22sp"
             android:textStyle="bold"
             android:typeface="serif"
+            android:textColor="#c0c0c0"
+            android:shadowColor="#000000"
+            android:shadowRadius="3.0"
+            android:shadowDx="0.0"
+            android:shadowDy="0.0"
             android:layout_margin="10dp"
             />
     </FrameLayout>
