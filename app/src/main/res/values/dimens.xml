@@ -8,4 +8,6 @@
     <dimen name="fab_margin">10dp</dimen>
     <dimen name="content_main_h_margin">1dp</dimen>
     <dimen name="content_main_v_margin">1dp</dimen>
+    <dimen name="sword_info_h_margin">5dp</dimen>
+    <dimen name="sword_info_v_margin">5dp</dimen>
 </resources>
