@@ -11,6 +11,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="csis.ie.ul.mhis.activities.SwordList"
-    tools:showIn="@layout/activity_sword_list">
+    tools:showIn="@layout/app_bar_sword_list">
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sword_listView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:choiceMode="singleChoice"/>
 
 </RelativeLayout>

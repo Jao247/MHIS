@@ -9,4 +9,5 @@
     <string name="main_image">main_image</string>
 
     <string name="title_activity_sword_list">Sword List</string>
+    <string name="sword_list_snackbar_msg">You are already on the Sword List</string>
 </resources>
