@@ -5,10 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/content_main_v_margin"
-    android:paddingLeft="@dimen/content_main_h_margin"
-    android:paddingRight="@dimen/content_main_h_margin"
-    android:paddingTop="@dimen/content_main_v_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="csis.ie.ul.mhis.MainActivity"
     tools:showIn="@layout/app_bar_main"
@@ -25,16 +21,22 @@
         android:adjustViewBounds="true"
         android:contentDescription="@string/main_image" />
 
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="310dp"
-        android:gravity= "center"
-        android:text="@string/wlc_msg"
-        android:id="@+id/textView"
-        android:background="@drawable/back_main"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:typeface="serif"
-        android:layout_weight="0.25" />
+        android:layout_height="match_parent"
+        android:background="@drawable/back_main">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity= "center_horizontal"
+            android:text="@string/wlc_msg"
+            android:id="@+id/textView"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:layout_margin="10dp"
+            />
+    </FrameLayout>
 
 </LinearLayout>
