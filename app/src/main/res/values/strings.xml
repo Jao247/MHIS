@@ -7,4 +7,6 @@
     <string name="nav_logo">nav logo</string>
     <string name="wlc_msg">Welcome to our Monster Hunter 4 Ultimate Stats application.\n Created for our Android development Module, by Jason Fahy, David Sims, and Adam Doherty.</string>
     <string name="main_image">main_image</string>
+
+    <string name="title_activity_sword_list">Sword List</string>
 </resources>

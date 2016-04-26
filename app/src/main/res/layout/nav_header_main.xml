@@ -24,6 +24,7 @@
             android:layout_height="match_parent"
             android:paddingTop="@dimen/nav_header_vertical_spacing"
             android:src="@mipmap/ic_logo"
+            android:onClick="goHome"
             android:contentDescription="@string/nav_logo"
             android:layout_weight="0.10"/>
     </LinearLayout>
