@@ -10,4 +10,5 @@
 
     <string name="title_activity_sword_list">Sword List</string>
     <string name="sword_list_snackbar_msg">You are already on the Sword List</string>
+    <string name="but1">Boss\'</string>
 </resources>
