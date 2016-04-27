@@ -26,8 +26,9 @@
         android:background="@drawable/back_mainb">
     </FrameLayout>
 
-    <FrameLayout
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/back_main">
 
@@ -47,6 +48,40 @@
             android:shadowDy="0.0"
             android:layout_margin="10dp"
             />
-    </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/butt_main"
+                android:text="Swords"
+                android:textSize="20sp"
+                android:textColor="#DE4A21"
+                android:id="@+id/button"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/butt_main"
+                android:text="Monsters"
+                android:textSize="20sp"
+                android:textColor="#DE4A21"
+                android:id="@+id/button2"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
