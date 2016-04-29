@@ -10,6 +10,14 @@ public class Boss_info {
     private String _weakness;
     private String _element;
 
+    public Boss_info(String _id, String _name, String _type, String _weakness, String _element) {
+        this._id = _id;
+        this._name = _name;
+        this._type = _type;
+        this._weakness = _weakness;
+        this._element = _element;
+    }
+
     public String get_id() {
         return _id;
     }
