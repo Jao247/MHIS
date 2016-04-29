@@ -10,8 +10,8 @@
             android:title="Swords"/>
         <item
             android:id="@+id/nav_armour"
-            android:icon="@drawable/ic_menu_armour"
-            android:title="Armours"/>
+            android:icon="@drawable/ic_menu_monster"
+            android:title="Monsters"/>
         <item
             android:id="@+id/nav_twitter"
             android:icon="@drawable/ic_menu_twitter"
