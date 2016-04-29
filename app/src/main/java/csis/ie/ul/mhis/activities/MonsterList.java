@@ -23,7 +23,7 @@ import java.util.List;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 
-public class SwordList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+public class MonsterList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -52,13 +52,13 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
                                     int position, long id) {
                 final String item = (String) parent.getItemAtPosition(position);
                 view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
-                            @Override
-                            public void run() {
-                                list.remove(item);
-                                adapter.notifyDataSetChanged();
-                                view.setAlpha(1);
-                            }
-                        });
+                    @Override
+                    public void run() {
+                        list.remove(item);
+                        adapter.notifyDataSetChanged();
+                        view.setAlpha(1);
+                    }
+                });
             }
 
         });
@@ -116,11 +116,11 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
 
         if ( id == R.id.nav_sword )
         {
-            Snackbar.make(getCurrentFocus(), R.string.sword_list_snackbar_msg, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+            Intent i = new Intent(this, SwordList.class);
+            startActivity(i);
         } else if ( id == R.id.nav_monster )
         {
-            Intent i = new Intent(this, MonsterList.class);
-            startActivity(i);
+            Snackbar.make(getCurrentFocus(), R.string.monster_list_snackbar_msg, Snackbar.LENGTH_LONG).setAction("Action", null).show();
         } else if ( id == R.id.nav_twitter )
         {
 
