@@ -24,7 +24,9 @@ public class SwordDbHelper extends SQLiteOpenHelper{
 
 
     public SwordDbHelper(Context context) {
+
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+
     }
 
     @Override
