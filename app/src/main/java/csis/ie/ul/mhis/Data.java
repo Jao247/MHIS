@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import csis.ie.ul.mhis.objects.BossObj;
 import csis.ie.ul.mhis.objects.SwordsObj;
-
 public class Data
 {
     public static ArrayList<BossObj>   bossArray  = new ArrayList<>();

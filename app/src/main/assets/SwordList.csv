@@ -1,0 +1,114 @@
+1,Iron Sword,Iron,288,N/A,Yellow/Green,0
+2,Iron Sword+,Iron,336,N/A,Yelow/Green,0
+3,Buster Sword,Iron,384,N/A,Green/Green,0
+4,Buster Sword+,Iron,480,N/A,Green/Green,0
+5,Ravager Blade,Iron,528,N/A,Green/Green,0
+6,Ravager Blade+,Iron,624,N/A,Green/Green,0
+7,Lacerator Blade,Iron,720,Fire,Green/Blue,5
+8,Eviscerator Blade,Iron,768,Fire,Green/White,5
+9,Chrome Razor,Iron,720,Poisin,Green/White,15
+10,Chrome Death Razor,Iron,768,Poisin,Blue/White,20
+11,Khezu Shock Sword,Iron,528,Paralysis,Green/Blue,0
+12,Khezu Shock Blade,Iron,720,Paralysis,White/White,0
+13,Khezu Shock Full,Iron,816,Paralysis,White/White,0
+14,Crude Cleaver,Iron,624,N/A,Green/Green,-10
+15,Fish Cleaver,Iron,720,N/A,Green/Green,-10
+16,Toad Cleaver,Iron,864,Water,Green/Blue,-20
+17,Wild Toad Cleaer,Iron,912,Water,Green/Blue,0
+18,Brazenwall,Iron,768,N/A,Green/Green,0
+19,Crimsonwall,Iron,960,Fire,Green/Blue,0
+20,Cragscliff,Iron,1008,Fire,Green/White,0
+21,Rugged Great Sword,Iron,480,N/A,Green/Green,0
+22,Chieftain's Grt Swd,Iron,528,N/A,Green/Green,0
+23,Pride of Shadow,Iron,576,Dragon,Green/White,25
+24,Pride of Dark,Iron,624,Dragon,Blue/White,35
+25,Pride of Doom,Iron,672,Dragon,White/White,45
+26,The Apocalypse,Iron,768,Dragon,White/White,65
+27,Usurper's Storm,Iron,672,Paralysis,Green/Green,0
+28,Despot's Blackstorm,Iron,768,Paralysis,Blue/White,0
+29,Brimstren Drakepride,Iron,816,Dragon,Blue/White,0
+30,Demon Rod,Iron,864,Paralysis,Green/Blue,20
+31,Great Demon Rod,Iron,912,Paralysis,Green/White,25
+32,Ludroth Bone Sword,Iron,480,Water,Green/Green,0
+33,Ludroth Bone Sword+,Iron,528,Water,Green/Green,0
+34,Cataclysm Sword,Iron,720,Water,Green/Blue,0
+35,Cataclysm Blade,Iron,816,Water,Blue/Blue,0
+36,Bone Blade,Bone,384,N/A,Orange/Yellow,0
+37,Bone Blade+,Bone,432,N/A,Yellow/Yellow,0
+38,Jaw Blade,Bone,480,N/A,Yellow/Yellow,0
+39,Giant Jawblade,Bone,528,N/A,Yellow/Green,0
+40,Golem Blade,Bone,576,N/A,Green/Green,0
+41,Tiger Agito,Bone,6722,N/A,Blue/Blue,-15
+42,Tigrex Great Sword,Bone,864,N/A,Blue/Blue,-10
+43,Kasasu Blade,Bone,912,Blastblight,Blue/Blue,-5
+44,Red Tigrex Grt Swd,Bone,960,Blastblight,Blue/Blue,10
+45,Dios Blade,Bone,720,Blastblight,Green/Blue,0
+46,Dios Blade+,Bone,768,Blastblight,Blue/Blue,0
+47,Demolition Sword,Bone,864,Blastblight,Blue/Blue,0
+48,Valkyrie Blade,Bone,576,Poisin,Green/Green,0
+49,Sieglinde,Bone,672,Poisin,Green/Green,0
+50,Titania,Bone,816,Poisin,Blue/Blue,0
+51,Blushing Dame,Bone,864,Poisin,Blue/White,5
+52,Auberon,Bone,864,Fire,White/White,10
+53,Red Wing,Bone,672,Fire,Green/Blue,0
+54,Rathalos iresword,Bone,720,Fire,Blue/White,0
+55,Rathalos Flamesword,Bone,768,Fire,Blue/White,0
+56,Rathalos Gleamsword,Bone,912,Fire,Blue/White,0
+57,Rathalos Fglinsword,Bone,816,Fire,Blue/White,0
+58,Hybrid Sword,Bone,480,Water,Green/Green,0
+59,Hybrid Sword+,Bone,576,Water,Green/Blue,0
+60,Hybrid Blade,Bone,624,Water,Blue/Blue,0
+61,The Hybrid Blade,Bone,720,Water,Blue/White,0
+62,Broad Blade,Bone,528,N/A,Green/Green,10
+63,Broad Blader,Bone,576,N/A,Blue/Blue,15
+64,Scylla Blader,Bone,624,Sleep,White/White,30
+65,Scylla Rushaba,Bone,672,Sleep,White/White,35
+66,Vile Serpentblade,Vile,480,N/A,Yellow/Green,0
+67,Vile Serpent blade+,Vile,528,N/A,Green/Green,0
+68,Fanged Serpentblade,Vile,576,Poisin,Green/Blue,0
+69,Deadly Srpentblade,Vile,672,Poisin,Blue/Blue,0
+70,Poison Serpentblade,Vile,720,Poisin,Blue/Blue,0
+71,Chick Decapitator,Vile,528,Fire,Green/Green,0
+72,Rooster Decapitator,Vile,576,Fire,Green/Green,0
+73,Sentoryu Raven,Vile,672,N/A,Green/Blue,5
+74,Sentoryu Wolf,Vile,768,Poisin,Blue/White,10
+75,Sentoryu Crow,Vile,816,Poisin,Blue/White,15
+76,Hidden Blade,Vile,576,N/A,Blue/White,35
+77,Dark of Night,Vile,768,Paralysis,White/White,45
+78,Vulcanis,Vulcanis,672,Blastblight,Green/Blue,0
+79,Vulcamagnon,Vulcanis,768,Blastblight,Blue/White,0
+80,Plesioth Watercutter,Plesioth,576,Water,Green/Green,0
+81,Plesioth Watercutter+,Plesioth,672,Water,Green/Blue,0
+82,Plesioth Lullaby,Plesioth,768,Water,Blue/White,0
+83,Plesioth Lullabane,Plesioth,864,Water,Blue/White,0
+84,Frozen Speartuna,Frozen,480,Ice,Green/Green,0
+85,Freezer Speartuna,Frozen,672,Ice,Green/Blue,0
+86,Berserker Sword,Berserker,816,Dragon,Blue/Blue,-5
+87,Anguish,Berserker,864,Dragon,Blue/Bllue,-5
+88,Glooming Dengue,Berserker,912,Dragon,Blue/White,0
+89,Akantor Broadsword,Akantor,1104,N/A,Yellow/Green,30
+90,Kirin Thundersword,Kirin Thunder sword,624,Paralysis,Blue/Blue,0
+91,King Thundersword,Kirin Thunder sword,768,Paralysis,Blue/Blue,0
+92,ImperualBlizzardsword,Imperual,672,Ice,White/White,0
+93,Amadur Greatsword,Amadur,912,Paralysis,Blue/Blue,-20
+94,Amadur Greatsword+,Amadur,1008,Paralysis,Blue/Blue,-10
+95,Fatalis Blade,Fatalis,864,Dragon,Blue/Purple,0
+96,Rusted Great Sword,Rusted,240,N/A,Orange/Yellow,0
+97,Tarnished Great Swd,Rusted,288,N/A,Orange/Green,0
+98,Ancient Blade,Rusted,480,Dragon,Green/Blue,0
+99,Elder Monument,Rusted,672,Dragon,White/White,0
+100,Steel Ice Blade,Rusted,768,Ice,White/White,5
+101,Daora's Decimator,Rusted,864,Ice,White/White,10
+102,Worn Great Sword,Worn,240,N/A,Orange/Orange,-10
+103,Weathered Great Swd,Worn,384,N/A,Orange/Yellow,-10
+104,Epitaph Blade,Worn,720,Dragon,Blue/White,0
+105,Teostra Blade,Worn,816,Blastblight,Blue/Blue,0
+106,King Teostra Blade,Worn,864,Blastblight,Blue/White,0
+107,True Cutter Sword,Cutter,576,N/A,Green/Green,0
+108,heavenly Cutter Sword,Cutter,912,Paralysis,Blue/Blue,0
+109,Captain J Blade,Captain J,672,Blastblight,Blue/White,0
+110,Captain J Buster,Captain J,768,Blastblight,White/White,0
+111,Eisenfaust,Eisenfaust,1104,N/A,Green/Blue,-70
+112,Universe Chromium,Universe Chromium,768,Ice,Blue/White,0
+113,Houma no Tsurugi,no Tsurugi,576,Paralysis,Green/Green,5
+114,Tenma no Tsurugi,no Tsurugi,672,Paralysis,Blue/White,15

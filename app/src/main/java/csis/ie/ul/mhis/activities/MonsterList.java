@@ -2,6 +2,7 @@ package csis.ie.ul.mhis.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -18,35 +19,53 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
+import csis.ie.ul.mhis.objects.BossObj;
 
-public class MonsterList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
-{
+public class MonsterList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monster_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        String bossLine = "";
+        String[] elements;
+
+        try {
+            AssetManager thingy = getApplicationContext().getAssets();
+            BufferedReader in = new BufferedReader(new InputStreamReader(getAssets().open("BossList.csv")));
+            for (int i = 0; i < 35; i++) {
+                bossLine = in.readLine();
+                elements = bossLine.split(",");
+                Data.bossArray.add(new BossObj(Integer.parseInt(elements[0]), elements[1], elements[2], elements[3], elements[4]));
+            }
+            thingy.close();
+            in.close();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
 
         final ListView lView = (ListView) findViewById(R.id.monster_listView);
 
         final ArrayList<String> monNames = new ArrayList<>();
-        for (int i = 0; i < Data.bossArray.size(); i++)
-        {
+        for (int i = 0; i < Data.bossArray.size(); i++) {
             monNames.add(Data.bossArray.get(i).get_name());
         }
-        if (Data.bossArray.size() == 0)
-        {
-            Toast.makeText(this, "No values in the array", Toast.LENGTH_LONG).show();
-        }
+
 
         final StableArrayAdapter adapter = new StableArrayAdapter(this,
                 android.R.layout.simple_list_item_1, monNames);
@@ -72,66 +91,55 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    private class StableArrayAdapter extends ArrayAdapter<String>
-    {
+    private class StableArrayAdapter extends ArrayAdapter<String> {
 
         HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
 
-        public StableArrayAdapter(Context context, int textViewResourceId, List<String> objects)
-        {
+        public StableArrayAdapter(Context context, int textViewResourceId, List<String> objects) {
             super(context, textViewResourceId, objects);
-            for ( int i = 0; i < objects.size(); ++i )
-            {
+            for (int i = 0; i < objects.size(); ++i) {
                 mIdMap.put(objects.get(i), i);
             }
         }
 
         @Override
-        public long getItemId(int position)
-        {
+        public long getItemId(int position) {
             String item = getItem(position);
             return mIdMap.get(item);
         }
 
         @Override
-        public boolean hasStableIds()
-        {
+        public boolean hasStableIds() {
             return true;
         }
 
     }
 
-    public void goHome(View view)
-    {
+    public void goHome(View view) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();
     }
 
-    @SuppressWarnings ("StatementWithEmptyBody")
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item)
-    {
+    public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if ( id == R.id.nav_sword )
-        {
+        if (id == R.id.nav_sword) {
             Intent i = new Intent(this, SwordList.class);
             startActivity(i);
             finish();
-        } else if ( id == R.id.nav_monster )
-        {
+        } else if (id == R.id.nav_monster) {
             Toast.makeText(this, R.string.monster_list_toast_msg, Toast.LENGTH_LONG).show();
-        } else if ( id == R.id.nav_wiki )
-        {
+        } else if (id == R.id.nav_wiki) {
             Intent i = new Intent();
             i.setAction(Intent.ACTION_VIEW);
             i.addCategory(Intent.CATEGORY_BROWSABLE);
             i.setData(Uri.parse("http://monsterhunter.wikia.com/wiki/Monster_Hunter_4_Ultimate"));
             startActivity(i);
-        } else if ( id == R.id.nav_exit )
-        {
+        } else if (id == R.id.nav_exit) {
             finish();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

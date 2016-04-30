@@ -28,6 +28,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sword_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
