@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import csis.ie.ul.mhis.DBHandlers.bossDbHelper;
 import csis.ie.ul.mhis.activities.MonsterList;
 import csis.ie.ul.mhis.activities.SwordList;
 
@@ -30,7 +31,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
+
+        bossDbHelper bDB = new bossDbHelper(this);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);

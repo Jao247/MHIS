@@ -1,16 +1,14 @@
 package csis.ie.ul.mhis.DBHandlers;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 
+import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.objects.BossObj;
 
 
@@ -26,9 +24,8 @@ public class bossDbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ELEMENT = "element";
 
     public bossDbHelper(Context context) {
-
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-
+        databaseToArray();
     }
 
     @Override
@@ -51,21 +48,22 @@ public class bossDbHelper extends SQLiteOpenHelper {
 
     //print out the database as a string
 
-    public void databaseToString() {
-        ArrayList<BossObj> boos = new ArrayList<>();
+    public void databaseToArray() {
         Connection c = null;
         try {
             Statement statement = c.createStatement();
             String s = "SELECT * FROM " + TABLE_NAME;
             ResultSet rs = statement.executeQuery(s);
             while (rs.next()) {
-                boos.add(new BossObj(
-                        rs.getString("_id"),
-                        rs.getString("name"),
-                        rs.getString("type"),
-                        rs.getString("weakness"),
-                        rs.getString("element")
-                ));
+                Data.bossArray.add(
+                        new BossObj(
+                                rs.getString("_id"),
+                                rs.getString("name"),
+                                rs.getString("type"),
+                                rs.getString("weakness"),
+                                rs.getString("element")
+                        )
+                );
             }
             rs.close();
             } catch (Exception e) {

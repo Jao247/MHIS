@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 
@@ -36,15 +37,19 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         setSupportActionBar(toolbar);
 
         final ListView lView = (ListView) findViewById(R.id.monster_listView);
-        String[] listItems = {"Item 0", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10",
-                "Item 11", "Item 12", "Item 13", "Item 14", "Item 15", "Item 16", "Item 17", "Item 18", "Item 19", "Item 20"};
 
-        final ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < listItems.length; ++i) {
-            list.add(listItems[i]);
+        final ArrayList<String> monNames = new ArrayList<>();
+        for (int i = 0; i < Data.bossArray.size(); i++)
+        {
+            monNames.add(Data.bossArray.get(i).get_name());
         }
+        if (Data.bossArray.size() == 0)
+        {
+            Toast.makeText(this, "No values in the array", Toast.LENGTH_LONG).show();
+        }
+
         final StableArrayAdapter adapter = new StableArrayAdapter(this,
-                android.R.layout.simple_list_item_1, list);
+                android.R.layout.simple_list_item_1, monNames);
         lView.setAdapter(adapter);
 
         lView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
