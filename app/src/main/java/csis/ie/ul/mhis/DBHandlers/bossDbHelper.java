@@ -31,7 +31,7 @@ public class bossDbHelper extends SQLiteOpenHelper{
                 COLUMN_NAME + " TEXT NOT NULL UNIQUE, " +
                 COLUMN_TYPE + " TEXT NOT NULL, " +
                 COLUMN_WEAKNESS + " TEXT NOT NULL, " +
-                COLUMN_ELEMENT + " TEXT, " +
+                COLUMN_ELEMENT + " TEXT, PRIMARY KEY(" + COLUMN_ID + ")" +
                 ");";
         db.execSQL(query);
     }
