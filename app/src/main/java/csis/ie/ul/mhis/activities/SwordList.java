@@ -16,10 +16,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 
@@ -34,30 +36,31 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final ListView lView = (ListView) findViewById(R.id.sword_listView);
-        String[] listItems = {"Item 0", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10",
-                "Item 11", "Item 12", "Item 13", "Item 14", "Item 15", "Item 16", "Item 17", "Item 18", "Item 19", "Item 20"};
-
-        final ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < listItems.length; ++i) {
-            list.add(listItems[i]);
+        final ListView    lView = (ListView) findViewById(R.id.sword_listView);
+        ArrayList<String> names = new ArrayList<>();
+        for ( int i = 0; i < Data.swordArray.size(); ++i )
+        {
+            names.add(Data.swordArray.get(i).getName());
         }
-        final StableArrayAdapter adapter = new StableArrayAdapter(this,
-                android.R.layout.simple_list_item_1, list);
+
+        if ( names.size() == 0 ) Toast.makeText(this, "No values", Toast.LENGTH_LONG).show();
+
+        final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, names);
         lView.setAdapter(adapter);
 
-        lView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, final View view,
-                                    int position, long id) {
+            public void onItemClick(AdapterView<?> parent, final View view, int position, long id)
+            {
                 final String item = (String) parent.getItemAtPosition(position);
                 switchTo(position);
             }
 
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout          drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
@@ -131,8 +134,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
             i.addCategory(Intent.CATEGORY_BROWSABLE);
             i.setData(Uri.parse("http://monsterhunter.wikia.com/wiki/Monster_Hunter_4_Ultimate"));
             startActivity(i);
-        }
-        else if ( id == R.id.nav_exit )
+        } else if ( id == R.id.nav_exit )
         {
             finish();
         }
