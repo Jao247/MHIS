@@ -36,7 +36,7 @@ public class SwordDbHelper extends SQLiteOpenHelper{
                 COLUMN_ATTACK + "INTEGER NOT NULL, " +
                 COLUMN_SPECIAL + "TEXT NOT NULL, " +
                 COLUMN_SHARPNESS + "TEXT NOT NULL, " +
-                COLUMN_AFFINITY + "INTEGER NOT NULL, " +
+                COLUMN_AFFINITY + "INTEGER NOT NULL, PRIMARY KEY(" + COLUMN_ID +") " +
                 ");";
         db.execSQL(query);
     }
