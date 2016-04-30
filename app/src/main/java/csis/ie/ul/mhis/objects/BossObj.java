@@ -1,16 +1,17 @@
-package csis.ie.ul.mhis;
+package csis.ie.ul.mhis.objects;
 
 /**
  * Created by adam on 26/04/2016.
  */
-public class Boss_info {
+public class BossObj
+{
     private String _id;
     private String _name;
     private String _type;
     private String _weakness;
     private String _element;
 
-    public Boss_info(String _id, String _name, String _type, String _weakness, String _element) {
+    public BossObj(String _id, String _name, String _type, String _weakness, String _element) {
         this._id = _id;
         this._name = _name;
         this._type = _type;
