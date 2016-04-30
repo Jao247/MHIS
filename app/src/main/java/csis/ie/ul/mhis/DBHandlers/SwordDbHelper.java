@@ -31,8 +31,8 @@ public class SwordDbHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE " + TABLE_NAME + "("+
-                COLUMN_ID + "TEXT NOT NULL UNIQUE, " +
+        String query = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("+
+                COLUMN_ID + "INTEGER, " +
                 COLUMN_NAME + "TEXT NOT NULL, " +
                 COLUMN_TYPE + "TEXT NOT NULL, "+
                 COLUMN_ATTACK + "INTEGER NOT NULL, " +

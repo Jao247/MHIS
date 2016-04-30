@@ -30,8 +30,8 @@ public class bossDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE " + TABLE_NAME + "(" +
-                COLUMN_ID + " TEXT NOT NULL UNIQUE, " +
+        String query = "CREATE TABLE IF NOT EXIST" + TABLE_NAME + "(" +
+                COLUMN_ID + " INTEGER, " +
                 COLUMN_NAME + " TEXT NOT NULL UNIQUE, " +
                 COLUMN_TYPE + " TEXT NOT NULL, " +
                 COLUMN_WEAKNESS + " TEXT NOT NULL, " +
@@ -55,15 +55,15 @@ public class bossDbHelper extends SQLiteOpenHelper {
             String s = "SELECT * FROM " + TABLE_NAME;
             ResultSet rs = statement.executeQuery(s);
             while (rs.next()) {
-                Data.bossArray.add(
-                        new BossObj(
-                                rs.getString("_id"),
-                                rs.getString("name"),
-                                rs.getString("type"),
-                                rs.getString("weakness"),
-                                rs.getString("element")
-                        )
-                );
+              //  Data.bossArray.add(
+                       // new BossObj(
+                                //rs.getString("_id"),
+                               // rs.getString("name"),
+                                //rs.getString("type"),
+                                //rs.getString("weakness"),
+                                //rs.getString("element")
+                        //)
+               // );
             }
             rs.close();
             } catch (Exception e) {
