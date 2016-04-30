@@ -51,14 +51,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 final String item = (String) parent.getItemAtPosition(position);
-                view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
-                    @Override
-                    public void run() {
-                        list.remove(item);
-                        adapter.notifyDataSetChanged();
-                        view.setAlpha(1);
-                    }
-                });
+                Snackbar.make(getCurrentFocus(), "pos: " + position + ", id: " + id, Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
 
         });
