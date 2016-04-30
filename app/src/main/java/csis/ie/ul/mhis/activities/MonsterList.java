@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,11 +30,11 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sword_list);
+        setContentView(R.layout.activity_monster_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final ListView lView = (ListView) findViewById(R.id.sword_listView);
+        final ListView lView = (ListView) findViewById(R.id.monster_listView);
         String[] listItems = {"Item 0", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10",
                 "Item 11", "Item 12", "Item 13", "Item 14", "Item 15", "Item 16", "Item 17", "Item 18", "Item 19", "Item 20"};
 
@@ -113,7 +114,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
             startActivity(i);
         } else if ( id == R.id.nav_monster )
         {
-            Snackbar.make(getCurrentFocus(), R.string.monster_list_snackbar_msg, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+            Toast.makeText(this, R.string.monster_list_toast_msg, Toast.LENGTH_LONG).show();
         } else if ( id == R.id.nav_twitter )
         {
 

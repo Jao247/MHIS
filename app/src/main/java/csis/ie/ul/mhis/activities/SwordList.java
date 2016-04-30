@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,14 +51,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 final String item = (String) parent.getItemAtPosition(position);
-                view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
-                            @Override
-                            public void run() {
-                                list.remove(item);
-                                adapter.notifyDataSetChanged();
-                                view.setAlpha(1);
-                            }
-                        });
+                switchTo(position);
             }
 
         });
@@ -70,6 +63,12 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void switchTo(int pos)
+    {
+        Intent in = new Intent(this, SwordInfo.class);
+        startActivity(in);
     }
 
     private class StableArrayAdapter extends ArrayAdapter<String>
@@ -116,7 +115,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
 
         if ( id == R.id.nav_sword )
         {
-            Snackbar.make(getCurrentFocus(), R.string.sword_list_snackbar_msg, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+            Toast.makeText(this, R.string.sword_list_toast_msg, Toast.LENGTH_LONG).show();
         } else if ( id == R.id.nav_monster )
         {
             Intent i = new Intent(this, MonsterList.class);

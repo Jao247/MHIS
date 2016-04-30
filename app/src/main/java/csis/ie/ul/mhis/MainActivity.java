@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
         } else if ( id == R.id.nav_twitter )
         {
-
         }
         else if ( id == R.id.nav_exit )
         {

@@ -49,6 +49,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="csis.ie.ul.mhis.MainActivity"/>
         </activity>
+        <activity
+            android:name=".activities.SwordInfo"
+            android:label="@string/title_activity_sword_info"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="csis.ie.ul.mhis.activities.SwordInfo"/>
+        </activity>
     </application>
 
 </manifest>
