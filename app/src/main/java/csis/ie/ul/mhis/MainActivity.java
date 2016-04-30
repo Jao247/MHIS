@@ -12,7 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 
 import csis.ie.ul.mhis.DBHandlers.bossDbHelper;
 import csis.ie.ul.mhis.activities.MonsterList;
@@ -20,7 +19,7 @@ import csis.ie.ul.mhis.activities.SwordList;
 
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
 
     @Override
@@ -41,11 +40,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        Button buttonMon = (Button) findViewById(R.id.buttonM);
-        buttonMon.setOnClickListener(this);
-        Button buttonSwo = (Button) findViewById(R.id.buttonS);
-        buttonSwo.setOnClickListener(this);
     }
 
     @Override
@@ -125,20 +119,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
 
-        if ( id == R.id.buttonS)
-        {
-            Intent i = new Intent(this, SwordList.class);
-            startActivity(i);
-            finish();
-        }
-        else if ( id == R.id.buttonM) {
-            Intent i = new Intent(this, MonsterList.class);
-            startActivity(i);
-            finish();
-        }
+    public void openSwords(View view)
+    {
+        Intent i = new Intent(this, SwordList.class);
+        startActivity(i);
+        finish();
+    }
+
+    public void openMonsters(View view)
+    {
+        Intent i = new Intent (this, MonsterList.class);
+        startActivity(i);
+        finish();
     }
 }

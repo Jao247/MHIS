@@ -30,7 +30,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/back_main">
+        android:background="@drawable/back_main"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="match_parent"
@@ -51,35 +52,31 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp">
+            android:layout_height="165dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="0.06">
 
-            <Button
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/butt_main"
-                android:text="Swords"
-                android:textSize="20sp"
-                android:textColor="#d7de12"
-                android:id="@+id/buttonS"
-                android:layout_marginLeft="10dp"
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/Sword_but"
+                android:src="@mipmap/ic_but_swords"
                 android:layout_alignParentTop="true"
+                android:onClick="openSwords"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/Mon_but"
+                android:onClick="openMonsters"
+                android:layout_below="@+id/Sword_but"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/ic_but_mons"
+                android:layout_marginTop="5dp"/>
 
-            <Button
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/butt_main"
-                android:text="Monsters"
-                android:textSize="20sp"
-                android:textColor="#d7de12"
-                android:id="@+id/buttonM"
-                android:layout_marginRight="10dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
         </RelativeLayout>
 
     </LinearLayout>
