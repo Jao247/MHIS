@@ -5,13 +5,13 @@ package csis.ie.ul.mhis.objects;
  */
 public class BossObj
 {
-    private String _id;
+    private int _id;
     private String _name;
     private String _type;
     private String _weakness;
     private String _element;
 
-    public BossObj(String _id, String _name, String _type, String _weakness, String _element) {
+    public BossObj(int _id, String _name, String _type, String _weakness, String _element) {
         this._id = _id;
         this._name = _name;
         this._type = _type;
@@ -19,9 +19,9 @@ public class BossObj
         this._element = _element;
     }
 
-    public String get_id() { return _id; }
+    public int get_id() { return _id; }
 
-    public void set_id(String _id) { this._id = _id; }
+    public void set_id(int _id) { this._id = _id; }
 
     public String get_name() { return _name; }
 
