@@ -19,4 +19,5 @@
     <string name="sword_list_toast_msg">You are already on the Sword List</string>
     <string name="monster_list_toast_msg">You are already on the Monster List</string>
     <string name="but1">Boss\'</string>
+    <string name="title_activity_image_test">ImageTest</string>
 </resources>

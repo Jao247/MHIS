@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="csis.ie.ul.mhis"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="csis.ie.ul.mhis">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,9 +15,9 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -27,7 +27,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="csis.ie.ul.mhis.MainActivity"/>
+                android:value="csis.ie.ul.mhis.MainActivity" />
         </activity>
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -35,10 +35,10 @@
         -->
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="0a6bc06afd58a89000485bc4fc97e11b70701d42"/>
+            android:value="0a6bc06afd58a89000485bc4fc97e11b70701d42" />
 
         <activity
             android:name=".activities.MonsterList"
@@ -47,7 +47,16 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="csis.ie.ul.mhis.MainActivity"/>
+                android:value="csis.ie.ul.mhis.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ImageTest"
+            android:label="@string/title_activity_image_test"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="csis.ie.ul.mhis.MainActivity" />
         </activity>
         <activity
             android:name=".activities.SwordInfo"

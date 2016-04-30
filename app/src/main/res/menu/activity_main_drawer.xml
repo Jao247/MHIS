@@ -13,9 +13,9 @@
             android:icon="@drawable/ic_menu_monster"
             android:title="Monsters"/>
         <item
-            android:id="@+id/nav_twitter"
+            android:id="@+id/nav_wiki"
             android:icon="@drawable/ic_menu_twitter"
-            android:title="Twitter"/>
+            android:title="Wiki"/>
     </group>
     <group
         android:id="@+id/menu_bot"

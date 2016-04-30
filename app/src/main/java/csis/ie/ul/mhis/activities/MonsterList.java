@@ -115,7 +115,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         } else if ( id == R.id.nav_monster )
         {
             Toast.makeText(this, R.string.monster_list_toast_msg, Toast.LENGTH_LONG).show();
-        } else if ( id == R.id.nav_twitter )
+        } else if ( id == R.id.nav_wiki )
         {
 
         } else if ( id == R.id.nav_exit )

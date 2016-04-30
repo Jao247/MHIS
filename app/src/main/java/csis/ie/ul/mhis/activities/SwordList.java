@@ -1,7 +1,7 @@
 package csis.ie.ul.mhis.activities;
 
-import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -104,6 +104,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
     {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+        finish();
     }
 
     @SuppressWarnings ("StatementWithEmptyBody")
@@ -123,7 +124,15 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
         } else if ( id == R.id.nav_twitter )
         {
 
-        } else if ( id == R.id.nav_exit )
+        } else if ( id == R.id.nav_wiki )
+        {
+            Intent i = new Intent();
+            i.setAction(Intent.ACTION_VIEW);
+            i.addCategory(Intent.CATEGORY_BROWSABLE);
+            i.setData(Uri.parse("http://monsterhunter.wikia.com/wiki/Monster_Hunter_4_Ultimate"));
+            startActivity(i);
+        }
+        else if ( id == R.id.nav_exit )
         {
             finish();
         }
