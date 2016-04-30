@@ -60,8 +60,10 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
         }
         else if ( id == R.id.nav_monster)
         {
-
-        } else if ( id == R.id.nav_wiki )
+            Intent i = new Intent(this, MonsterList.class);
+            startActivity(i);
+        }
+        else if ( id == R.id.nav_wiki )
         {
             Intent i = new Intent();
             i.setAction(Intent.ACTION_VIEW);

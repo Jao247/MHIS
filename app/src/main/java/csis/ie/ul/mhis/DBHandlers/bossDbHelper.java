@@ -5,10 +5,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by adam on 25/04/2016.
- */
-public class bossDbHelper extends SQLiteOpenHelper{
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import csis.ie.ul.mhis.objects.BossObj;
+
+
+public class bossDbHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "Boss_info.db";
@@ -19,11 +25,12 @@ public class bossDbHelper extends SQLiteOpenHelper{
     public static final String COLUMN_WEAKNESS = "weakness";
     public static final String COLUMN_ELEMENT = "element";
 
-    public bossDbHelper(Context context){
+    public bossDbHelper(Context context) {
 
-    super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME + "(" +
@@ -43,23 +50,27 @@ public class bossDbHelper extends SQLiteOpenHelper{
     }
 
     //print out the database as a string
-    public String databaseToString(){
-        String dbString = "";
-        SQLiteDatabase db = getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE 1";
 
-        //cursor points to a location in your results
-        Cursor c = db.rawQuery(query, null);
-        // move to the first row in you results
-                c.moveToFirst();
-
-        while (!c.isAfterLast()){
-            if(c.getString(c.getColumnIndex("productname")) != null){
-                dbString += c.getString(c.getColumnIndex("productname"));
-                dbString += "\n";
+    public void databaseToString() {
+        ArrayList<BossObj> boos = new ArrayList<>();
+        Connection c = null;
+        try {
+            Statement statement = c.createStatement();
+            String s = "SELECT * FROM " + TABLE_NAME;
+            ResultSet rs = statement.executeQuery(s);
+            while (rs.next()) {
+                boos.add(new BossObj(
+                        rs.getString("_id"),
+                        rs.getString("name"),
+                        rs.getString("type"),
+                        rs.getString("weakness"),
+                        rs.getString("element")
+                ));
             }
+            rs.close();
+            } catch (Exception e) {
+                System.out.println(e);
         }
-        db.close();
-        return dbString;
     }
 }
+
