@@ -1,5 +1,6 @@
 package csis.ie.ul.mhis.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -68,6 +69,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
     private void switchTo(int pos)
     {
         Intent in = new Intent(this, SwordInfo.class);
+        in.putExtra("id", pos);
         startActivity(in);
     }
 
@@ -121,9 +123,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
         {
             Intent i = new Intent(this, MonsterList.class);
             startActivity(i);
-        } else if ( id == R.id.nav_twitter )
-        {
-
+            finish();
         } else if ( id == R.id.nav_wiki )
         {
             Intent i = new Intent();

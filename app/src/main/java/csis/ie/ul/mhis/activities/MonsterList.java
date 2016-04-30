@@ -2,6 +2,7 @@ package csis.ie.ul.mhis.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -99,6 +100,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
     {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+        finish();
     }
 
     @SuppressWarnings ("StatementWithEmptyBody")
@@ -112,12 +114,17 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         {
             Intent i = new Intent(this, SwordList.class);
             startActivity(i);
+            finish();
         } else if ( id == R.id.nav_monster )
         {
             Toast.makeText(this, R.string.monster_list_toast_msg, Toast.LENGTH_LONG).show();
         } else if ( id == R.id.nav_wiki )
         {
-
+            Intent i = new Intent();
+            i.setAction(Intent.ACTION_VIEW);
+            i.addCategory(Intent.CATEGORY_BROWSABLE);
+            i.setData(Uri.parse("http://monsterhunter.wikia.com/wiki/Monster_Hunter_4_Ultimate"));
+            startActivity(i);
         } else if ( id == R.id.nav_exit )
         {
             finish();
