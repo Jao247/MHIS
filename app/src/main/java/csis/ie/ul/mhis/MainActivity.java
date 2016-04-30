@@ -1,7 +1,6 @@
 package csis.ie.ul.mhis;
 
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -14,16 +13,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 import csis.ie.ul.mhis.activities.MonsterList;
 import csis.ie.ul.mhis.activities.SwordList;
-import csis.ie.ul.mhis.objects.BossObj;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
 {
 
     @Override
@@ -35,21 +31,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        try {
-            AssetManager thingy = getApplicationContext().getAssets();
-            BufferedReader in = new BufferedReader(new InputStreamReader(getAssets().open("BossList.csv")));
-            for (int i = 0; i < 35; i++) {
-                String bossLine = in.readLine();
-                String [] elements = bossLine.split(",");
-                Data.bossArray.add(new BossObj(Integer.parseInt(elements[0]), elements[1], elements[2], elements[3], elements[4]));
-            }
-            thingy.close();
-            in.close();
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -58,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -137,7 +119,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void onClick(View v){
 
+    }
     public void openSwords(View view)
     {
         Intent i = new Intent(this, SwordList.class);
@@ -151,4 +135,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(i);
         finish();
     }
+
 }

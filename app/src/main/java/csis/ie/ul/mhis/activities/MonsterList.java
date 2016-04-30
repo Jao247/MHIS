@@ -40,7 +40,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_monster_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        String bossLine = "";
+        /*String bossLine = "";
         String[] elements;
 
         try {
@@ -56,7 +56,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         }
         catch (IOException e){
             e.printStackTrace();
-        }
+        }*/
 
 
         final ListView lView = (ListView) findViewById(R.id.monster_listView);

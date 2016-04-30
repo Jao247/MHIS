@@ -1,8 +1,6 @@
 package csis.ie.ul.mhis.objects;
 
-/**
- * Created by adam on 26/04/2016.
- */
+
 public class BossObj
 {
     private int _id;
