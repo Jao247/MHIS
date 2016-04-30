@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="csis.ie.ul.mhis.activities.SwordInfo"
+    tools:showIn="@layout/app_bar_sword_info"
+    android:rowCount="8"
+    android:columnCount="5">
+
+    <ImageView
+        android:layout_width="164dp"
+        android:layout_height="164dp"
+        android:id="@+id/sImage"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:src="@mipmap/ic_placeholder"
+        android:layout_columnSpan="4"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Attack"
+        android:id="@+id/sHeading0"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="left"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Attack Data"
+        android:id="@+id/atkData"
+        android:layout_row="1"
+        android:layout_column="4"
+        android:layout_gravity="left"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Sharpness"
+        android:id="@+id/sHeading1"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:layout_gravity="left"
+        android:layout_columnSpan="3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Sharp Data"
+        android:id="@+id/sharpData"
+        android:layout_row="3"
+        android:layout_column="4"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Affinity"
+        android:id="@+id/sHeading2"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:layout_gravity="left"
+        android:layout_columnSpan="3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Affinity Data"
+        android:id="@+id/affData"
+        android:layout_row="4"
+        android:layout_column="4"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Special"
+        android:id="@+id/sHeading3"
+        android:layout_row="5"
+        android:layout_column="0"
+        android:layout_gravity="left"
+        android:layout_columnSpan="3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Special Data"
+        android:id="@+id/specData"
+        android:layout_row="5"
+        android:layout_column="4"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Type"
+        android:id="@+id/sHeading4"
+        android:layout_row="6"
+        android:layout_column="0"
+        android:layout_gravity="left"
+        android:layout_columnSpan="3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Type Data"
+        android:id="@+id/typeData"
+        android:layout_row="6"
+        android:layout_column="4"/>
+</GridLayout>

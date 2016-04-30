@@ -1,6 +1,5 @@
 package csis.ie.ul.mhis;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 
 import csis.ie.ul.mhis.activities.MonsterList;
 import csis.ie.ul.mhis.activities.SwordList;
@@ -102,13 +100,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             Intent i = new Intent(this, SwordList.class);
             startActivity(i);
+            finish();
         } else if ( id == R.id.nav_monster)
         {
             Intent i = new Intent(this, MonsterList.class);
             startActivity(i);
             finish();
-        }
-        else if ( id == R.id.nav_wiki )
+        } else if ( id == R.id.nav_wiki )
         {
             Intent i = new Intent();
             i.setAction(Intent.ACTION_VIEW);
