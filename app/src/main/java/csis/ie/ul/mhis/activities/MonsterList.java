@@ -114,7 +114,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         } else if ( id == R.id.nav_monster )
         {
             Snackbar.make(getCurrentFocus(), R.string.monster_list_snackbar_msg, Snackbar.LENGTH_LONG).setAction("Action", null).show();
-        } else if ( id == R.id.nav_twitter )
+        } else if ( id == R.id.nav_wiki )
         {
 
         } else if ( id == R.id.nav_exit )
