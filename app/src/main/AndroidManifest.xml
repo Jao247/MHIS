@@ -56,7 +56,16 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="csis.ie.ul.mhis.activities.SwordInfo"/>
+                android:value="csis.ie.ul.mhis.activities.SwordInfo" />
+        </activity>
+        <activity
+            android:name=".activities.MonsterInfo"
+            android:label="@string/title_activity_monster_info"
+            android:parentActivityName=".activities.MonsterList"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="csis.ie.ul.mhis.activities.MonsterList" />
         </activity>
     </application>
 
