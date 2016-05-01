@@ -33,7 +33,11 @@ import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 import csis.ie.ul.mhis.objects.BossObj;
-
+/*Importing the Monster data into the BossArray in the data class. Here we used a Input Steam which calls from the
+  Asset Manager, which then references the file in the asset directory. We the then use a buffer reader to read in the
+  info from the CSV file. Using a for loop, objects on BossObj type are created and putt into the Boss Array list.
+  A second local array is made and the names from the objects are put into it. This is then displayed in the list where
+  the user can select an option*/
 public class MonsterList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Data.bossArray.clear();
+
         AssetManager assMan = getAssets();
         InputStream is = null;
         try {
@@ -93,6 +98,9 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+    /*when a position in the list is pressed on the phone, this method is called and the position in the array list
+    is passed through and then passed to the new activity*/
+
     private void switchTo(int pos)
     {
         Intent in = new Intent(this, MonsterInfo.class);
@@ -123,7 +131,6 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         }
 
     }
-
     public void goHome(View view) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
@@ -155,6 +162,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    //When the phone back button is pressed the app goes back to the main activity from this activity.
     public void onBackPressed()
     {
         Intent intent = new Intent(this,MainActivity.class);
