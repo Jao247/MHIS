@@ -1,15 +1,15 @@
 package csis.ie.ul.mhis.objects;
 
-
 public class BossObj
 {
-    private int _id;
+    private int    _id;
     private String _name;
     private String _type;
     private String _weakness;
     private String _element;
 
-    public BossObj(int _id, String _name, String _type, String _weakness, String _element) {
+    public BossObj(int _id, String _name, String _type, String _weakness, String _element)
+    {
         this._id = _id;
         this._name = _name;
         this._type = _type;
