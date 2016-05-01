@@ -10,7 +10,7 @@ public class BossObj
     private String _element;
     private String _url;
 
-    public BossObj(int _id, String _name, String _type, String _weakness, String _element)
+    public BossObj(int _id, String _name, String _type, String _weakness, String _element, String _url)
     {
         this._id = _id;
         this._name = _name;
