@@ -23,10 +23,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
@@ -40,24 +42,27 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_monster_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*String bossLine = "";
-        String[] elements;
-
+        AssetManager assMan = getAssets();
+        InputStream is = null;
         try {
-            AssetManager thingy = getApplicationContext().getAssets();
-            BufferedReader in = new BufferedReader(new InputStreamReader(getAssets().open("BossList.csv")));
+            is = assMan.open("BossList.csv");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        BufferedReader reader = null;
+        reader = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+        String line = "";
+        String elements[];
+        try {
             for (int i = 0; i < 35; i++) {
-                bossLine = in.readLine();
-                elements = bossLine.split(",");
+                line = reader.readLine();
+                elements = line.split(",");
                 Data.bossArray.add(new BossObj(Integer.parseInt(elements[0]), elements[1], elements[2], elements[3], elements[4]));
             }
-            thingy.close();
-            in.close();
-        }
-        catch (IOException e){
+        } catch ( IOException e) {
             e.printStackTrace();
-        }*/
 
+        }
 
         final ListView lView = (ListView) findViewById(R.id.monster_listView);
 
