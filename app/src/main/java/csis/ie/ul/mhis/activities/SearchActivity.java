@@ -25,6 +25,7 @@ import java.util.List;
 import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
+import csis.ie.ul.mhis.objects.BossObj;
 
 public class SearchActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -87,8 +88,8 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id)
             {
                 final String item = (String) parent.getItemAtPosition(position);
-                if ( isBoss(position, resultList) ) switchToMons(resultList.get(position));
-                else if ( isSword(position, resultList) ) switchToSword(resultList.get(position));
+                if (isBoss(position, resultList)) switchToMons(resultList.get(position));
+                else if (isSword(position, resultList)) switchToSword(resultList.get(position));
             }
         });
     }
@@ -101,6 +102,13 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         }
         return false;
     }
+    public boolean isSword(int pos, ArrayList<String> nameList){
+        for (int j = 0; j < Data.swordArray.size(); j++){
+            if(nameList.get(pos).equalsIgnoreCase(Data.swordArray.get(j).getName()))
+                return true;
+        }
+        return false;
+    }
 
     public void switchToMons(String name)
     {
@@ -109,6 +117,14 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         for (int j = 0; j < Data.bossArray.size(); j++)
             if (Data.bossArray.get(j).get_name().equalsIgnoreCase(name)) position = j;
         i.putExtra("id",position);
+        startActivity(i);
+    }
+    public void switchToSword(String name){
+        Intent i = new Intent(this,SwordInfo.class);
+        int position = 0;
+        for (int j = 0; j < Data.swordArray.size(); j++)
+            if (Data.swordArray.get(j).getName().equalsIgnoreCase(name)) position = j;
+        i.putExtra("id", position);
         startActivity(i);
     }
 
