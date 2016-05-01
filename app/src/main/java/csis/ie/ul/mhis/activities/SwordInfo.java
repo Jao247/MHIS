@@ -6,11 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import csis.ie.ul.mhis.Data;
-import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 
 public class SwordInfo extends AppCompatActivity
@@ -42,9 +42,11 @@ public class SwordInfo extends AppCompatActivity
                            Data.swordArray.get(pos).getMidSec() + "/MH4-Great_Sword_Render_" + Data.swordArray.get(pos).getDigits() + ".png";
         try
         {
+            Toast.makeText(this, "Acquiring image from the wiki.", Toast.LENGTH_LONG).show();
             Picasso.with(this).load(imgURL).placeholder(R.mipmap.ic_placeholder).into(iv);
         } catch (Exception e)
         {
+            Toast.makeText(this, "Could not acquire image, " + e.getMessage(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
         TextView tv = (TextView) findViewById(R.id.atkData);
