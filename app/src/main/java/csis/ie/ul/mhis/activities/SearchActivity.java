@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -47,15 +48,30 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    public void searchFun(View view)
+    {
+        EditText searchVal = (EditText) findViewById(R.id.search_field);
+        bossSearch(searchVal.getText().toString());
+        swordSearch(searchVal.getText().toString());
+
+        if ( Data.searchResultsSwords.isEmpty() && Data.searchResultsBoss.isEmpty() )
+        {
+            Toast.makeText(this, "No results found.", Toast.LENGTH_LONG).show();
+        } else
+        {
+            populateList();
+        }
+    }
+
     private void populateList()
     {
         // Create an object for the list view and a arraylist to store all the sword names
-        final ListView    lView = (ListView) findViewById(R.id.search_result_list);
-        ArrayList<String> resultList = new ArrayList<>();
-        for ( int i = 0; i < Data.swordArray.size(); ++i )
-        {
-            resultList.add(Data.swordArray.get(i).getName());
-        }
+        final ListView          lView      = (ListView) findViewById(R.id.search_result_list);
+        final ArrayList<String> resultList = new ArrayList<>();
+        for ( int i = 0; i < Data.searchResultsSwords.size(); i++ )
+            resultList.add(Data.searchResultsSwords.get(i).getName());
+        for ( int i = 0; i < Data.searchResultsBoss.size(); i++ )
+            resultList.add(Data.searchResultsBoss.get(i).get_name());
 
         // Give a toast if it cannot load the data into the sword list.
         if ( resultList.size() == 0 ) Toast.makeText(this, "No values", Toast.LENGTH_LONG).show();
@@ -71,12 +87,33 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id)
             {
                 final String item = (String) parent.getItemAtPosition(position);
-                //here we will deal with what activity needs to be loaded (monster info or sword info)
+                if ( isBoss(position, resultList) ) switchToMons(resultList.get(position));
+                else if ( isSword(position, resultList) ) switchToSword(position);
             }
         });
     }
 
-    /** A class for the List view to allow us to properly display the list item
+    public boolean isBoss(int pos, ArrayList<String> nameList)
+    {
+        for ( int j = 0; j < Data.bossArray.size(); j++ )
+        {
+            if ( nameList.get(pos).equalsIgnoreCase(Data.bossArray.get(j).get_name()) ) return true;
+        }
+        return false;
+    }
+
+    public void switchToMons(String name)
+    {
+        Intent i = new Intent(this, MonsterInfo.class);
+        int position = 0;
+        for (int j = 0; j < Data.bossArray.size(); j++)
+            if (Data.bossArray.get(j).get_name().equalsIgnoreCase(name)) position = j;
+        i.putExtra("id",position);
+        startActivity(i);
+    }
+
+    /**
+     * A class for the List view to allow us to properly display the list item
      */
     private class StableArrayAdapter extends ArrayAdapter<String>
     {
@@ -93,10 +130,12 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
             // We are using the Hashmap to store the data for the List of Items.
         }
 
-        /** This is used to return the ItemID, although we didnt use it as part of our app,
-         *  It is required to be here to override the method of the same name and arguments
-         *  in the Array Adapter class.
-         *  @param position This is the position in the list view.
+        /**
+         * This is used to return the ItemID, although we didnt use it as part of our app,
+         * It is required to be here to override the method of the same name and arguments
+         * in the Array Adapter class.
+         *
+         * @param position This is the position in the list view.
          */
         @Override
         public long getItemId(int position)
@@ -115,6 +154,7 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
 
     /**
      * This is to bring the user back to the main page, this is also achieved by using the back button
+     *
      * @param view this is a required parameter for the onClick function.
      */
     public void goHome(View view)
@@ -126,7 +166,9 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
 
     /**
      * This is how we are using the Navigation Items and how we deal with what they do.
+     *
      * @param item this is to signify which item was pressed
+     *
      * @return this is returning a boolean to state that an item was selected.
      */
     @SuppressWarnings ("StatementWithEmptyBody")
@@ -159,10 +201,11 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     @Override
     public void onBackPressed()
     {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
