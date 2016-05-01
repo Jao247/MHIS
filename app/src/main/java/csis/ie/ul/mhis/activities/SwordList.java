@@ -117,8 +117,8 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
         try {
             reader = new BufferedReader(new InputStreamReader(getAssets().open("SwordList.csv")));
             String mLine, temp[];
-            int ints[] = new int[3];
-            // i ID, s Name, s type, i atk, s spec, s sharp, i aff
+            int ints[] = new int[4];
+            // i ID, s Name, s type, i atk, s spec, s sharp, i aff, i vignette, s midSec, s ending
             while ((mLine = reader.readLine()) != null)
             {
                 temp = mLine.split(",");
@@ -126,11 +126,12 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
                     ints[0] = Integer.parseInt(temp[0]);
                     ints[1] = Integer.parseInt(temp[3]);
                     ints[2] = Integer.parseInt(temp[6]);
+                    ints[3] = Integer.parseInt(temp[7]);
                 } catch (NumberFormatException e)
                 {
                     e.printStackTrace();
                 }
-                Data.swordArray.add(new SwordsObj(ints[0],temp[1],temp[2],ints[1],temp[4],temp[5],ints[2]));
+                Data.swordArray.add(new SwordsObj(ints[0],temp[1],temp[2],ints[1],temp[4],temp[5],ints[2],ints[3],temp[8],temp[9]));
             }
         }catch (Exception e)
         {
