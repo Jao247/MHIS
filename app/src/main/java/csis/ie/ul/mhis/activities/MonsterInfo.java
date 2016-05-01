@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -65,10 +64,5 @@ public class MonsterInfo extends AppCompatActivity
         if ( gotoMain ) intent = new Intent(this, MainActivity.class);
         else intent = new Intent(this, MonsterList.class);
         startActivity(intent);
-    }
-    public void goHome(View view)
-    {
-        Intent i = new Intent(this, MonsterList.class);
-        startActivity(i);
     }
 }
