@@ -17,6 +17,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +27,7 @@ import java.util.List;
 import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
+import csis.ie.ul.mhis.objects.SwordsObj;
 
 public class SwordList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -35,6 +39,8 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_sword_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        readFile();
 
         final ListView    lView = (ListView) findViewById(R.id.sword_listView);
         ArrayList<String> names = new ArrayList<>();
@@ -103,6 +109,44 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
             return true;
         }
 
+    }
+
+    public void readFile()
+    {
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new InputStreamReader(getAssets().open("SwordList.csv")));
+            String mLine, temp[];
+            int ints[] = new int[3];
+            // i ID, s Name, s type, i atk, s spec, s sharp, i aff
+            while ((mLine = reader.readLine()) != null)
+            {
+                temp = mLine.split(",");
+                try {
+                    ints[0] = Integer.parseInt(temp[0]);
+                    ints[1] = Integer.parseInt(temp[3]);
+                    ints[2] = Integer.parseInt(temp[6]);
+                } catch (NumberFormatException e)
+                {
+                    e.printStackTrace();
+                }
+                Data.swordArray.add(new SwordsObj(ints[0],temp[1],temp[2],ints[1],temp[4],temp[5],ints[2]));
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }finally
+        {
+            if (reader != null)
+            {
+                try {
+                    reader.close();
+                }catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public void goHome(View view)
