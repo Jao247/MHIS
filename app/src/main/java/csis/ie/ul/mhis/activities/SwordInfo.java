@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,7 +29,6 @@ public class SwordInfo extends AppCompatActivity
         int    pos    = dataIn.getInt("id");
 
         changeDisplay(pos);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -62,5 +62,10 @@ public class SwordInfo extends AppCompatActivity
     {
         Intent intent = new Intent(this,SwordList.class);
         startActivity(intent);
+    }
+    public void goHome(View view)
+    {
+        Intent i = new Intent(this, SwordList.class);
+        startActivity(i);
     }
 }

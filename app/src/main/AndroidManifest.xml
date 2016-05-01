@@ -55,7 +55,7 @@
         <activity
             android:name=".activities.SwordInfo"
             android:label="@string/title_activity_sword_info"
-            android:parentActivityName=".activities.SwordInfo"
+            android:parentActivityName=".activities.SwordList"
             android:noHistory= "true"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

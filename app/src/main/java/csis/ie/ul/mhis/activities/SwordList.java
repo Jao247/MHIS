@@ -188,7 +188,6 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
     {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
-        finish();
     }
 
     /**
@@ -210,7 +209,6 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
         {
             Intent i = new Intent(this, MonsterList.class);
             startActivity(i);
-            finish();
         } else if ( id == R.id.nav_wiki )
         {
             Intent i = new Intent();
