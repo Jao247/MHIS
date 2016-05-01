@@ -6,7 +6,6 @@ import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -27,7 +26,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 
 import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
@@ -116,6 +114,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
     {
         Intent in = new Intent(this, MonsterInfo.class);
         in.putExtra("id", pos);
+        in.putExtra("gotoMain", false);
         startActivity(in);
     }
 

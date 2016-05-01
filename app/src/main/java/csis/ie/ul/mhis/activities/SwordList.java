@@ -17,9 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,7 +24,6 @@ import java.util.List;
 import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
-import csis.ie.ul.mhis.objects.SwordsObj;
 
 /** A class to display a list of items from an array of swords.
  *  @author Jason Fahy
@@ -48,7 +44,6 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
         setSupportActionBar(toolbar);
 
         // If the array for swords is empty, read the details from the "SwordList.csv" file
-        if (Data.swordArray.size() == 0) readFile();
 
         // Create an object for the list view and a arraylist to store all the sword names
         final ListView    lView = (ListView) findViewById(R.id.sword_listView);
@@ -97,6 +92,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
     {
         Intent in = new Intent(this, SwordInfo.class);
         in.putExtra("id", pos);
+        in.putExtra("gotoMain", false);
         startActivity(in);
     }
 
@@ -137,48 +133,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
 
     }
 
-    /**
-     * A method to read from the "SwordInfo.csv" file so that we can add the details
-     * to the array list of swords.
-     */
-    public void readFile()
-    {
-        BufferedReader reader = null;
-        try {
-            reader = new BufferedReader(new InputStreamReader(getAssets().open("SwordList.csv")));
-            String mLine, temp[];
-            int ints[] = new int[4];
-            // i ID, s Name, s type, i atk, s spec, s sharp, i aff, i vignette, s midSec, s ending
-            while ((mLine = reader.readLine()) != null)
-            {
-                temp = mLine.split(",");
-                try {
-                    ints[0] = Integer.parseInt(temp[0]);
-                    ints[1] = Integer.parseInt(temp[3]);
-                    ints[2] = Integer.parseInt(temp[6]);
-                    ints[3] = Integer.parseInt(temp[7]);
-                } catch (NumberFormatException e)
-                {
-                    e.printStackTrace();
-                }
-                Data.swordArray.add(new SwordsObj(ints[0],temp[1],temp[2],ints[1],temp[4],temp[5],ints[2],ints[3],temp[8],temp[9]));
-            }
-        }catch (Exception e)
-        {
-            e.printStackTrace();
-        }finally
-        {
-            if (reader != null)
-            {
-                try {
-                    reader.close();
-                }catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
+
 
     /**
      * This is to bring the user back to the main page, this is also achieved by using the back button

@@ -10,10 +10,13 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import csis.ie.ul.mhis.Data;
+import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 
 public class MonsterInfo extends AppCompatActivity
 {
+
+    private boolean gotoMain = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,13 +27,16 @@ public class MonsterInfo extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         Bundle dataIn = getIntent().getExtras();
-        int pos = dataIn.getInt("id");
+        int    pos    = dataIn.getInt("id");
+        gotoMain = dataIn.getBoolean("gotoMain");
 
         changeDisplay(pos);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-    public void changeDisplay(int pos){
+
+    public void changeDisplay(int pos)
+    {
         setTitle(Data.bossArray.get(pos).get_name());
 
         ImageView iv = (ImageView) findViewById(R.id.mImage);
@@ -51,9 +57,12 @@ public class MonsterInfo extends AppCompatActivity
         tv = (TextView) findViewById(R.id.elementData);
         tv.setText("" + Data.bossArray.get(pos).get_element());
     }
+
     public void onBackPressed()
     {
-        Intent intent = new Intent(this,MonsterList.class);
+        Intent intent;
+        if ( gotoMain ) intent = new Intent(this, MainActivity.class);
+        else intent = new Intent(this, MonsterList.class);
         startActivity(intent);
     }
 }

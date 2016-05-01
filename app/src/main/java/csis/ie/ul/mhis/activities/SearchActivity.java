@@ -25,7 +25,6 @@ import java.util.List;
 import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
-import csis.ie.ul.mhis.objects.BossObj;
 
 public class SearchActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -88,8 +87,8 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id)
             {
                 final String item = (String) parent.getItemAtPosition(position);
-                if (isBoss(position, resultList)) switchToMons(resultList.get(position));
-                else if (isSword(position, resultList)) switchToSword(resultList.get(position));
+                if ( isBoss(position, resultList) ) switchToMons(resultList.get(position));
+                else if ( isSword(position, resultList) ) switchToSword(resultList.get(position));
             }
         });
     }
@@ -117,6 +116,7 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         for (int j = 0; j < Data.bossArray.size(); j++)
             if (Data.bossArray.get(j).get_name().equalsIgnoreCase(name)) position = j;
         i.putExtra("id",position);
+        i.putExtra("gotoMain",true);
         startActivity(i);
     }
     public void switchToSword(String name){
@@ -125,6 +125,7 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         for (int j = 0; j < Data.swordArray.size(); j++)
             if (Data.swordArray.get(j).getName().equalsIgnoreCase(name)) position = j;
         i.putExtra("id", position);
+        i.putExtra("gotoMain",true);
         startActivity(i);
     }
 
@@ -176,7 +177,6 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
     {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
-        finish();
     }
 
     /**
@@ -193,12 +193,12 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
 
         if ( id == R.id.nav_sword )
         {
-            Toast.makeText(this, R.string.sword_list_toast_msg, Toast.LENGTH_LONG).show();
+            Intent i = new Intent(this, SwordList.class);
+            startActivity(i);
         } else if ( id == R.id.nav_monster )
         {
             Intent i = new Intent(this, MonsterList.class);
             startActivity(i);
-            finish();
         } else if ( id == R.id.nav_wiki )
         {
             Intent i = new Intent();
@@ -230,8 +230,8 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         Data.searchResultsBoss.clear();
         String filler = "";
         for (int i = 0; i < Data.bossArray.size(); i++ ){
-            filler = Data.bossArray.get(i).get_name();
-            if(filler.contains(param))
+            filler = Data.bossArray.get(i).get_name().toLowerCase();
+            if(filler.contains(param.toLowerCase()))
                 Data.searchResultsBoss.add(Data.bossArray.get(i));
         }
     }
@@ -239,8 +239,8 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         Data.searchResultsSwords.clear();
         String filler = "";
         for (int i = 0; i < Data.swordArray.size(); i++ ){
-            filler = Data.swordArray.get(i).getName();
-            if(filler.contains(param))
+            filler = Data.swordArray.get(i).getName().toLowerCase();
+            if(filler.contains(param.toLowerCase()))
                 Data.searchResultsSwords.add(Data.swordArray.get(i));
         }
     }

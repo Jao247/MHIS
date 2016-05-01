@@ -13,11 +13,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import csis.ie.ul.mhis.activities.MonsterList;
 import csis.ie.ul.mhis.activities.SearchActivity;
 import csis.ie.ul.mhis.activities.SwordList;
-
-
+import csis.ie.ul.mhis.objects.SwordsObj;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener
 {
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (Data.swordArray.isEmpty()) readFile();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener()
@@ -49,6 +54,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+    }
+
+    /**
+     * A method to read from the "SwordInfo.csv" file so that we can add the details
+     * to the array list of swords.
+     */
+    public void readFile()
+    {
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new InputStreamReader(getAssets().open("SwordList.csv")));
+            String mLine, temp[];
+            int ints[] = new int[4];
+            // i ID, s Name, s type, i atk, s spec, s sharp, i aff, i vignette, s midSec, s ending
+            while ((mLine = reader.readLine()) != null)
+            {
+                temp = mLine.split(",");
+                try {
+                    ints[0] = Integer.parseInt(temp[0]);
+                    ints[1] = Integer.parseInt(temp[3]);
+                    ints[2] = Integer.parseInt(temp[6]);
+                    ints[3] = Integer.parseInt(temp[7]);
+                } catch (NumberFormatException e)
+                {
+                    e.printStackTrace();
+                }
+                Data.swordArray.add(new SwordsObj(ints[0],temp[1],temp[2],ints[1],temp[4],temp[5],ints[2],ints[3],temp[8],temp[9]));
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }finally
+        {
+            if (reader != null)
+            {
+                try {
+                    reader.close();
+                }catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public void search()

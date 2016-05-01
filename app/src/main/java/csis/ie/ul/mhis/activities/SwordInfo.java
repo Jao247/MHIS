@@ -11,10 +11,13 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import csis.ie.ul.mhis.Data;
+import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 
 public class SwordInfo extends AppCompatActivity
 {
+
+    private boolean gotoMain = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -26,6 +29,8 @@ public class SwordInfo extends AppCompatActivity
 
         Bundle dataIn = getIntent().getExtras();
         int    pos    = dataIn.getInt("id");
+
+        gotoMain = dataIn.getBoolean("gotoMain");
 
         changeDisplay(pos);
 
@@ -62,7 +67,11 @@ public class SwordInfo extends AppCompatActivity
     }
     public void onBackPressed()
     {
-        Intent intent = new Intent(this,SwordList.class);
+        Intent intent;
+        if (gotoMain)
+            intent  = new Intent(this,MainActivity.class);
+        else
+            intent  = new Intent(this,SwordList.class);
         startActivity(intent);
     }
 }
