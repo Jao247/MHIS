@@ -40,7 +40,7 @@ public class SwordList extends AppCompatActivity implements NavigationView.OnNav
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        readFile();
+        if (Data.swordArray.size() == 0) readFile();
 
         final ListView    lView = (ListView) findViewById(R.id.sword_listView);
         ArrayList<String> names = new ArrayList<>();
