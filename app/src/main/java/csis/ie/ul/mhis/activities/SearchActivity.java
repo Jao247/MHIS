@@ -127,8 +127,8 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
             {
                 mIdMap.put(objects.get(i), i);
             }
-            // We are using the Hashmap to store the data for the List of Items.
-        }
+        }    // We are using the Hashmap to store the data for the List of Items.
+
 
         /**
          * This is used to return the ItemID, although we didnt use it as part of our app,
@@ -154,7 +154,6 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
 
     /**
      * This is to bring the user back to the main page, this is also achieved by using the back button
-     *
      * @param view this is a required parameter for the onClick function.
      */
     public void goHome(View view)
