@@ -166,4 +166,22 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
+    public void bossSearch(String param) {
+        Data.searchResultsBoss.clear();
+        String filler = "";
+        for (int i = 0; i < Data.bossArray.size(); i++ ){
+            filler = Data.bossArray.get(i).get_name();
+            if(filler.equalsIgnoreCase(param))
+                Data.searchResultsBoss.add(Data.bossArray.get(i));
+        }
+    }
+    public void swordSearch(String param){
+        Data.searchResultsSwords.clear();
+        String filler = "";
+        for (int i = 0; i < Data.swordArray.size(); i++ ){
+            filler = Data.swordArray.get(i).getName();
+            if(filler.equalsIgnoreCase(param))
+                Data.searchResultsSwords.add(Data.swordArray.get(i));
+        }
+    }
 }
