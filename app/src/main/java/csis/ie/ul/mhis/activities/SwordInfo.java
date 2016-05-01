@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -37,23 +36,15 @@ public class SwordInfo extends AppCompatActivity
 
         ImageView iv = (ImageView) findViewById(R.id.sImage);
 
-        String preString = "http://vignette2.wikia.nocookie.net/monsterhunter/images/3/31/MH4-Great_Sword_Render_";
-
-        if ( ++pos / 10 > 0 ) preString += "0";
-        else if ( pos / 100 > 0 ) preString += "";
-        else preString += "00";
-
+        String imgURL = "http://vignette" + Data.swordArray.get(pos).getVigNumb() + ".wikia.nocookie.net/monsterhunter/images/" +
+                           Data.swordArray.get(pos).getMidSec() + "/MH4-Great_Sword_Render_" + Data.swordArray.get(pos).getDigits() + ".png";
         try
         {
-            Picasso.with(this).load(preString + pos + ".png").into(iv);
+            Picasso.with(this).load(imgURL).placeholder(R.mipmap.ic_placeholder).into(iv);
         } catch (Exception e)
         {
             e.printStackTrace();
         }
-
-        Toast.makeText(this, preString + pos + ".png", Toast.LENGTH_LONG).show();
-
-        pos--;
         TextView tv = (TextView) findViewById(R.id.atkData);
         tv.setText("" + Data.swordArray.get(pos).getAtk());
         tv = (TextView) findViewById(R.id.sharpData);
