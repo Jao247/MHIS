@@ -166,9 +166,7 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
 
     /**
      * This is how we are using the Navigation Items and how we deal with what they do.
-     *
      * @param item this is to signify which item was pressed
-     *
      * @return this is returning a boolean to state that an item was selected.
      */
     @SuppressWarnings ("StatementWithEmptyBody")
@@ -207,5 +205,28 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    /**
+     *
+     * @param param the search parameter from the user
+     */
+    public void bossSearch(String param) {
+        Data.searchResultsBoss.clear();
+        String filler = "";
+        for (int i = 0; i < Data.bossArray.size(); i++ ){
+            filler = Data.bossArray.get(i).get_name();
+            if(filler.contains(param))
+                Data.searchResultsBoss.add(Data.bossArray.get(i));
+        }
+    }
+    public void swordSearch(String param){
+        Data.searchResultsSwords.clear();
+        String filler = "";
+        for (int i = 0; i < Data.swordArray.size(); i++ ){
+            filler = Data.swordArray.get(i).getName();
+            if(filler.contains(param))
+                Data.searchResultsSwords.add(Data.swordArray.get(i));
+        }
     }
 }
