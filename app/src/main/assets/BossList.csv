@@ -1,36 +1,36 @@
-1,Gogmazios,Elder Dragon,"Dragon, Fire","Tarred, Fire"
-2,Teostra,Elder Dragon,"Dragon, Water","Dragon, Fire"
-3,Kushala Daora,Elder Dragon,"Dragon, Thunder","Dragon, Ice"
-4,Kirin,Elder Dragon,"Fire, Ice",Thunder
-5,Fatalis,Elder Dragon,"Dragon, Fire","Dragon, Fire"
+1,Gogmazios,Elder Dragon,Dragon/Fire,Tarred/Fire
+2,Teostra,Elder Dragon,Dragon/Water,Dragon/Fire
+3,Kushala Daora,Elder Dragon,Dragon/Thunder,Dragon/Ice
+4,Kirin,Elder Dragon,Fire/Ice,Thunder
+5,Fatalis,Elder Dragon,Dragon/Fire,Dragon/Fire
 6,Dalamandur,Elder Dragon,Dragon,Paralysis
-7,Dah'ren Mohran,Elder Dragon,"Thunder, Dragon",Paralysis
+7,Dah'ren Mohran,Elder Dragon,Thunder/Dragon,Paralysis
 8,Zinogre,Fanged Wyvern,Ice,Thunder
-9,Zamtrios,Amphibian,"Thunder, Fire","Ice, Water"
-10,Yian Kut-Ku,Bird Wyvern,"Water, Ice",Fire
+9,Zamtrios,Amphibian,ThunderFire,Ice/Water
+10,Yian Kut-Ku,Bird Wyvern,Water/Ice,Fire
 11,Yian Garuga,Bird Wyvern,Water,Fire
-12,Velocidrome,Bird Wyvern,"Ice, Thunder",Defense Down
-13,Tigrex,Flying Wyvern,"Thunder, Dragon",Snowman
-14,Tetsucabra,Amphibian,"Water, Thunder",Ice
-15,Seltas Queen,Neopteron,"Fire, Ice",Water
-16,Seltas,Neopteron,"Thunder, Fire",Defense Down
-17,Rathain,Flying Wyvern,"Dragon, Thunder",Fire
+12,Velocidrome,Bird Wyvern,Ice/Thunder,Defense Down
+13,Tigrex,Flying Wyvern,Thunder/Dragon,Snowman
+14,Tetsucabra,Amphibian,Water/Thunder,Ice
+15,Seltas Queen,Neopteron,Fire/Ice,Water
+16,Seltas,Neopteron,Thunder/Fire,Defense Down
+17,Rathain,Flying Wyvern,Dragon/Thunder,Fire
 18,Rathalos,Flying Wyvern,Thunder,Fire
 19,Rajang,Fanged Beast,Ice,Thunder
-20,Nerscylla,Temnoceran,"Fire, Thunder","Poison, Sleep"
-21,Najarala,Snake Wyvern,"Ice, Water",Paralysis
-22,Lagombi,Fanged Beast,"Fire, Thunder",Ice
+20,Nerscylla,Temnoceran,Fire/Thunder,Poison/Sleep
+21,Najarala,Snake Wyvern,Ice/Water,Paralysis
+22,Lagombi,Fanged Beast,Fire/Thunder,Ice
 23,Khezu,Flying Wyvern,Fire,Thunder
-24,Kecha Wacha,Fanged Beast,"Fire, Thunder",Water
+24,Kecha Wacha,Fanged Beast,Fire/Thunder,Water
 25,Iodrome,Bird Wyvern,Thunder,Poison
 26,Gypceros,Bird Wyvern,Fire,Poison
 27,Great Jaggi,Bird Wyvern,Fire,Defense Down
 28,Gravios,Flying Wyvern,Water,Fire
-29,Shagaru Magala,Elder Dragon,"Dragon, Fire",Frenzy Virus
-30,Gore Magala,Unknown Type,"Fire, Thunder, Dragon",Frenzy Virus
-31,Gendrome,Bird Wyvern,"Water, Ice",Paralysis
+29,Shagaru Magala,Elder Dragon,Dragon/Fire,Frenzy Virus
+30,Gore Magala,Unknown Type,Fire/Thunder/Dragon,Frenzy Virus
+31,Gendrome,Bird Wyvern,Water/Ice,Paralysis
 32,Deviljho,Brute Wyvern,Dragon,Dragon
 33,Congalala,Fanged Beast,Fire,Fire
 34,Brachydios,Brute Wyvern,Water,Blastblight
-35,Basarios,Flying Wyvern,"Dragon, Water",Fire
-36,Akantor,Flying Wyvern,"Dragon, Thunder","Fire, Dragon"
+35,Basarios,Flying Wyvern,Dragon/Water,Fire
+36,Akantor,Flying Wyvern,Dragon/Thunder,Fire/Dragon

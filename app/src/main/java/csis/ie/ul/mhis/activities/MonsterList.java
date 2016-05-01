@@ -27,8 +27,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+
 
 import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
@@ -61,7 +60,6 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
             }
         } catch ( IOException e) {
             e.printStackTrace();
-
         }
 
         final ListView lView = (ListView) findViewById(R.id.monster_listView);
@@ -82,8 +80,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
             public void onItemClick(AdapterView<?> parent, final View view,
                                     int position, long id) {
                 final String item = (String) parent.getItemAtPosition(position);
-                Snackbar.make(getCurrentFocus(), "pos: " + position + ", id: " + id, Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
+                switchTo(position);            }
 
         });
 
@@ -94,6 +91,12 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+    private void switchTo(int pos)
+    {
+        Intent in = new Intent(this, MonsterInfo.class);
+        in.putExtra("id", pos);
+        startActivity(in);
     }
 
     private class StableArrayAdapter extends ArrayAdapter<String> {
