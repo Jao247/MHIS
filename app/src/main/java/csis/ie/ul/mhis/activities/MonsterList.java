@@ -139,7 +139,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         if (id == R.id.nav_sword) {
             Intent i = new Intent(this, SwordList.class);
             startActivity(i);
-            finish();
+            //finish();
         } else if (id == R.id.nav_monster) {
             Toast.makeText(this, R.string.monster_list_toast_msg, Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_wiki) {
@@ -154,5 +154,10 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }
