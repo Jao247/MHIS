@@ -41,6 +41,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_monster_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Data.bossArray.clear();
         AssetManager assMan = getAssets();
         InputStream is = null;
         try {
@@ -53,7 +54,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         String line = "";
         String elements[];
         try {
-            for (int i = 0; i < 35; i++) {
+            for (int i = 0; i <= 35; i++) {
                 line = reader.readLine();
                 elements = line.split(",");
                 Data.bossArray.add(new BossObj(Integer.parseInt(elements[0]), elements[1], elements[2], elements[3], elements[4]));
