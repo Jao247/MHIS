@@ -1,5 +1,6 @@
 package csis.ie.ul.mhis.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import csis.ie.ul.mhis.Data;
+import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 
 public class SwordInfo extends AppCompatActivity
@@ -55,5 +57,10 @@ public class SwordInfo extends AppCompatActivity
         tv.setText("" + Data.swordArray.get(pos).getSpecial());
         tv = (TextView) findViewById(R.id.typeData);
         tv.setText("" + Data.swordArray.get(pos).getType());
+    }
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this,SwordList.class);
+        startActivity(intent);
     }
 }
