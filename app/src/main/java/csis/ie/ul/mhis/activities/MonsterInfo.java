@@ -7,6 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import csis.ie.ul.mhis.Data;
 import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
@@ -31,6 +33,15 @@ public class MonsterInfo extends AppCompatActivity
         setTitle(Data.bossArray.get(pos).get_name());
 
         ImageView iv = (ImageView) findViewById(R.id.mImage);
+
+        String imgURL = Data.bossArray.get(pos).get_url();
+        try
+        {
+            Picasso.with(this).load(imgURL).placeholder(R.mipmap.ic_placeholder).into(iv);
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 
         TextView tv = (TextView) findViewById(R.id.typeData);
         tv.setText("" + Data.bossArray.get(pos).get_type());

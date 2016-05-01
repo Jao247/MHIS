@@ -57,7 +57,7 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
             for (int i = 0; i <= 35; i++) {
                 line = reader.readLine();
                 elements = line.split(",");
-                Data.bossArray.add(new BossObj(Integer.parseInt(elements[0]), elements[1], elements[2], elements[3], elements[4]));
+                Data.bossArray.add(new BossObj(Integer.parseInt(elements[0]), elements[1], elements[2], elements[3], elements[4], elements[5]));
             }
         } catch ( IOException e) {
             e.printStackTrace();

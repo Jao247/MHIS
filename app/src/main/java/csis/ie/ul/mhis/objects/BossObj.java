@@ -8,32 +8,26 @@ public class BossObj
     private String _type;
     private String _weakness;
     private String _element;
+    private String _url;
 
-    public BossObj(int _id, String _name, String _type, String _weakness, String _element) {
+    public BossObj(int _id, String _name, String _type, String _weakness, String _element, String _url) {
         this._id = _id;
         this._name = _name;
         this._type = _type;
         this._weakness = _weakness;
         this._element = _element;
+        this._url = _url;
     }
 
     public int get_id() { return _id; }
 
-    public void set_id(int _id) { this._id = _id; }
-
     public String get_name() { return _name; }
-
-    public void set_name(String _name) { this._name = _name; }
 
     public String get_type() { return _type; }
 
-    public void set_type(String _type) { this._type = _type; }
-
     public String get_weakness() { return _weakness; }
-
-    public void set_weakness(String _weakness) { this._weakness = _weakness; }
 
     public String get_element() { return _element; }
 
-    public void set_element(String _element) { this._element = _element; }
+    public String get_url() {return _url;}
 }
