@@ -38,6 +38,12 @@ import csis.ie.ul.mhis.objects.BossObj;
   info from the CSV file. Using a for loop, objects on BossObj type are created and putt into the Boss Array list.
   A second local array is made and the names from the objects are put into it. This is then displayed in the list where
   the user can select an option*/
+
+/**
+ * This will list out all the names of the monsters
+ * into an ArrayList and from that into a List
+ * @author David Sims, Adam Doherty
+ */
 public class MonsterList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,7 +2,8 @@ package csis.ie.ul.mhis.objects;
 
 
 /**
- * @author adam
+ * This is used to store the data from our CSV file.
+ * @author Adam Doherty
  */
 public class BossObj
 {
