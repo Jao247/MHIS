@@ -144,7 +144,6 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
     public void goHome(View view) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
-        finish();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -156,7 +155,6 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
         if (id == R.id.nav_sword) {
             Intent i = new Intent(this, SwordList.class);
             startActivity(i);
-            //finish();
         } else if (id == R.id.nav_monster) {
             Toast.makeText(this, R.string.monster_list_toast_msg, Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_wiki) {

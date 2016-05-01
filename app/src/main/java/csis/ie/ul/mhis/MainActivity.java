@@ -135,12 +135,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             Intent i = new Intent(this, SwordList.class);
             startActivity(i);
-            //finish();
         } else if ( id == R.id.nav_monster)
         {
             Intent i = new Intent(this, MonsterList.class);
             startActivity(i);
-            //finish();
         } else if ( id == R.id.nav_wiki )
         {
             Intent i = new Intent();
@@ -164,14 +162,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     {
         Intent i = new Intent(this, SwordList.class);
         startActivity(i);
-       // finish();
     }
 
     public void openMonsters(View view)
     {
         Intent i = new Intent (this, MonsterList.class);
         startActivity(i);
-        //finish();
     }
 
 }
