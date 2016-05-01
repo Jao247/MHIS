@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Search"
+            android:onClick="searchFun"
             android:id="@+id/search_but"
             android:layout_gravity="right"/>
     </LinearLayout>

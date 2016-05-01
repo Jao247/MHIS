@@ -24,4 +24,5 @@
     <string name="sword_image_link">http://vignette2.wikia.nocookie.net/monsterhunter/images/3/31/MH4-Great_Sword_Render_</string>
     <string name="title_activity_search">Search</string>
     <string name="title_activity_search">Search Swords and Monsters</string>
+    <string name="title_activity_test">test</string>
 </resources>

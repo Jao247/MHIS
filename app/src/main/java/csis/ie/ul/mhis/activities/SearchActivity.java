@@ -88,7 +88,7 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
             {
                 final String item = (String) parent.getItemAtPosition(position);
                 if ( isBoss(position, resultList) ) switchToMons(resultList.get(position));
-                else if ( isSword(position, resultList) ) switchToSword(position);
+                else if ( isSword(position, resultList) ) switchToSword(resultList.get(position));
             }
         });
     }
