@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import csis.ie.ul.mhis.objects.BossObj;
 import csis.ie.ul.mhis.objects.SwordsObj;
-public class Data
-{
-    public static ArrayList<BossObj>   bossArray  = new ArrayList<>();
+
+public class Data {
+    public static ArrayList<BossObj> searchResultsBoss = new ArrayList<>();
+    public static ArrayList<SwordsObj> searchResultsSwords = new ArrayList<>();
+    public static ArrayList<BossObj> bossArray = new ArrayList<>();
     public static ArrayList<SwordsObj> swordArray = new ArrayList<>();
 }

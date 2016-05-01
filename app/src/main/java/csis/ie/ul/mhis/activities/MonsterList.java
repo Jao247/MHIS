@@ -74,6 +74,11 @@ public class MonsterList extends AppCompatActivity implements NavigationView.OnN
             e.printStackTrace();
         }
 
+
+
+
+
+
         final ListView lView = (ListView) findViewById(R.id.monster_listView);
 
         final ArrayList<String> monNames = new ArrayList<>();
