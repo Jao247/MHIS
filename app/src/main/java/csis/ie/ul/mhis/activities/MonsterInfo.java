@@ -6,16 +6,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.squareup.picasso.Picasso;
-
 import csis.ie.ul.mhis.Data;
-import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 
+/**
+ * This outputs the information for a monster
+ * @author Adam Doherty
+ */
 public class MonsterInfo extends AppCompatActivity
 {
-
+    /**
+     * This method is called when the activity is called
+     * @param savedInstanceState This just needed
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -29,6 +34,12 @@ public class MonsterInfo extends AppCompatActivity
         changeDisplay(pos);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+    /**
+     *
+     * @param pos
+     */
+
     public void changeDisplay(int pos){
         setTitle(Data.bossArray.get(pos).get_name());
 
@@ -37,9 +48,12 @@ public class MonsterInfo extends AppCompatActivity
         String imgURL = Data.bossArray.get(pos).get_url();
         try
         {
+            Toast.makeText(this, "Acquiring the image from the Wiki", Toast.LENGTH_LONG).show();
             Picasso.with(this).load(imgURL).placeholder(R.mipmap.ic_placeholder).into(iv);
         } catch (Exception e)
         {
+            Toast.makeText(this,"Failed to acquire image from the wiki", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
 
