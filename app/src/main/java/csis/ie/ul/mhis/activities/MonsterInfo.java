@@ -1,5 +1,6 @@
 package csis.ie.ul.mhis.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -7,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import csis.ie.ul.mhis.Data;
+import csis.ie.ul.mhis.MainActivity;
 import csis.ie.ul.mhis.R;
 
 public class MonsterInfo extends AppCompatActivity
@@ -35,9 +37,11 @@ public class MonsterInfo extends AppCompatActivity
         tv = (TextView) findViewById(R.id.weaknessData);
         tv.setText("" + Data.bossArray.get(pos).get_weakness());
         tv = (TextView) findViewById(R.id.elementData);
-        tv.setText("" + Data.bossArray.get(pos).get_element() );
-
-
+        tv.setText("" + Data.bossArray.get(pos).get_element());
     }
-
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this,MonsterList.class);
+        startActivity(intent);
+    }
 }
