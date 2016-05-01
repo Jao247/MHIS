@@ -36,34 +36,6 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Create an object for the list view and a arraylist to store all the sword names
-        final ListView    lView = (ListView) findViewById(R.id.sword_listView);
-        ArrayList<String> names = new ArrayList<>();
-        for ( int i = 0; i < Data.swordArray.size(); ++i )
-        { // Use this once the search is done to add data to the search list
-            names.add(Data.swordArray.get(i).getName());
-        }
-
-        // Give a toast if it cannot load the data into the sword list.
-        if ( names.size() == 0 ) Toast.makeText(this, "No values", Toast.LENGTH_LONG).show();
-
-        // Create an object of the Stable Array Adapter so that the names can be displayed.
-        final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, names);
-        lView.setAdapter(adapter);
-
-        // Adds a listener for clicking any of the list items so that we can switch to another activity.
-        lView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, final View view, int position, long id)
-            {
-                final String item = (String) parent.getItemAtPosition(position);
-                //here we will deal with what activity needs to be loaded (monster info or sword info)
-            }
-
-        });
-
         // Sets up the navigation drawer, this is done for all activities that includes the drawer.
         DrawerLayout          drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -75,7 +47,34 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    private void populateList()
+    {
+        // Create an object for the list view and a arraylist to store all the sword names
+        final ListView    lView = (ListView) findViewById(R.id.search_result_list);
+        ArrayList<String> resultList = new ArrayList<>();
+        for ( int i = 0; i < Data.swordArray.size(); ++i )
+        {
+            resultList.add(Data.swordArray.get(i).getName());
+        }
 
+        // Give a toast if it cannot load the data into the sword list.
+        if ( resultList.size() == 0 ) Toast.makeText(this, "No values", Toast.LENGTH_LONG).show();
+
+        // Create an object of the Stable Array Adapter so that the names can be displayed.
+        final StableArrayAdapter adapter = new StableArrayAdapter(this, android.R.layout.simple_list_item_1, resultList);
+        lView.setAdapter(adapter);
+
+        // Adds a listener for clicking any of the list items so that we can switch to another activity.
+        lView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view, int position, long id)
+            {
+                final String item = (String) parent.getItemAtPosition(position);
+                //here we will deal with what activity needs to be loaded (monster info or sword info)
+            }
+        });
+    }
 
     /** A class for the List view to allow us to properly display the list item
      */
@@ -165,23 +164,5 @@ public class SearchActivity extends AppCompatActivity implements NavigationView.
     {
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
-    }
-    public void bossSearch(String param) {
-        Data.searchResultsBoss.clear();
-        String filler = "";
-        for (int i = 0; i < Data.bossArray.size(); i++ ){
-            filler = Data.bossArray.get(i).get_name();
-            if(filler.equalsIgnoreCase(param))
-                Data.searchResultsBoss.add(Data.bossArray.get(i));
-        }
-    }
-    public void swordSearch(String param){
-        Data.searchResultsSwords.clear();
-        String filler = "";
-        for (int i = 0; i < Data.swordArray.size(); i++ ){
-            filler = Data.swordArray.get(i).getName();
-            if(filler.equalsIgnoreCase(param))
-                Data.searchResultsSwords.add(Data.swordArray.get(i));
-        }
     }
 }
